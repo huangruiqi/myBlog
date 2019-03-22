@@ -1,0 +1,30 @@
+@import '../../../../styles/main.scss';
+@import '../../../../styles/mixin.scss';
+
+.awardsContainer {
+    width: 100%;
+    min-height: px2rem(700);
+    position: relative;
+    .awardsTitle {
+        @include divWH(px2rem(1000), px2rem(100));
+        @include flex(center);
+        margin: 0 auto;
+        @include fontSC(px2rem(70), #46875D);
+        opacity: 0.6;
+    }
+    #awards {
+        position: absolute;
+        left: 50%;
+        top: px2rem(100);
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+    img {
+        position: absolute;
+        left: 50%;
+        top: px2rem(100);
+        transform: translateX(-50%);
+        opacity: 0.2;
+    }
+
+}

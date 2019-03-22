@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/mditor/css/mditor.min.css" />
+  <script src="/mditor/js/mditor.min.js"></script>
+  <title>Dva Demo</title>
+  <style>
+    #root {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<!-- <textarea name="editor" id="editor"></textarea> -->
+  <div id="root" ></div>
+  <script src="/index.js"></script>
+  <script type="text/javascript"> 
+    const time = setInterval(() => {
+      if (!document.querySelector('.toolbar') && document.getElementById('editor')) {
+        var mditor = Mditor.fromTextarea(document.getElementById('editor'));
+      }
+      // var mditor = Mditor.fromTextarea(document.getElementById('editor'));
+
+    }, 500);
+    // var mditor = Mditor.fromTextarea(document.getElementById('editor'));
+    // var button = document.getElementById('button');
+    // //获取或设置编辑器的q值
+    // mditor.on('ready', function () {
+    //   mditor.value = '** hello **';
+    //   console.log(mditor.value);
+    //   button.onclick = () => {
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.open('post', 'https://5c07b4a0646dca0013f87e1e.mockapi.io/getHtml');
+    //     xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    //     const data = "content=" + mditor.value;
+    //     xhr.send(data);
+    //     xhr.onreadystatechange = function () {
+    //       if (xhr.readyState == 4 && xhr.status == 200) {
+    //         console.log(xhr.responseText);
+    //       }
+    //     };
+    //   }
+    // });
+  </script>
+  <script type='text/javascript'>
+    const html = document.querySelector('html');
+    html.style.height = 'auto';
+  </script>
+</body>
+</html>

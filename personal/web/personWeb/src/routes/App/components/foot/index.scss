@@ -1,0 +1,64 @@
+@import '../../../../styles/main.scss';
+@import '../../../../styles/mixin.scss';
+@font-face {
+  font-family: 'iconfont';
+  src: url('../../../../../public/iconFont/foot/iconfont.eot');
+  src: url('../../../../../public/iconFont/foot/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../../../../../public/iconFont/foot/iconfont.woff') format('woff'),
+    url('../../../../../public/iconFont/foot/iconfont.ttf') format('truetype'),
+    url('../../../../../public/iconFont/foot/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: px2rem(50);
+    font-style: normal;
+    color: yellow;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.footContainer {
+    @include divWH(100%, 100%);
+    @include flex();
+    align-items: center;
+    background-color: #000000;
+    .space {
+        @include divWH(40%, 100%);
+        @include flex(space-around);
+        align-items: center;
+        .contact {
+            @include divWH(px2rem(200), px2rem(50));
+            border-radius: px2rem(40);
+            background-color: #525455;
+            @include flex(center);
+            align-items: center;
+            span {
+                @include fontSC(px2rem(20), white);
+            }
+        }
+        img {
+            width: px2rem(80);
+        }
+        marquee {
+            color: white;
+            font-size: px2rem(20);
+            width: px2rem(530);
+        }
+    }
+    .cai {
+        width: px2rem(80);
+        height: px2rem(100);
+    }
+    .contact {
+        @include divWH(40%, 100%);
+        @include flex(space-around);
+        div {
+            @include divWH(30%, 100%);
+            @include flex(space-around);
+            align-items: center;
+            img {
+                width: px2rem(150);
+            }
+        }
+    }
+}

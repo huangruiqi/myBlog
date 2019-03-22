@@ -1,0 +1,57 @@
+@import '../../styles/main.scss';
+@import '../../styles/mixin.scss';
+
+.tecContainer {
+  flex: 1;
+  @include flex(center);
+  align-items: center;
+
+  .tecContent {
+    width: 70%;
+    min-height: px2rem(750);
+    background-color: #fff;
+    @include flex();
+    flex-direction: column;
+    padding: px2rem(80) px2rem(100) px2rem(80) px2rem(100);
+
+    >span {
+      @include fontSC(px2rem(40), black);
+    }
+
+    hr {
+      width: 100%;
+      height: px2rem(1);
+
+    }
+
+    .blogList {
+      flex: 1;
+      width: 100%;
+      @include flex(center);
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      position: relative;
+
+      
+          
+        
+    }
+  }
+}
+
+@media screen and (min-width: 0) and (max-width: 500px) {
+  .tecContent {
+    width: 70%;
+
+    // min-height: px2rem(800);
+    .blogList {
+      overflow-y: auto;
+      min-height: px2rem(1000);
+
+      div {
+        // height: px2rem(1000);
+        // overflow-y: hidden;
+      }
+    }
+  }
+}

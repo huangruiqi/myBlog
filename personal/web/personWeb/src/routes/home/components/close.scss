@@ -1,0 +1,33 @@
+@import '../../../styles/main.scss';
+@import '../../../styles/mixin.scss';
+
+.closeContainer {
+    $an1:(opacity: 0);
+    $an2:(opacity: 1);
+    $demo:(0%:$an1, 50%:$an2, 100%:$an2);
+    @include keyframes(demo, $demo);
+    @include animation(demo 3s);
+
+    @include divWH(5%, 100%);
+    height: 100%;
+    background-color: #232728;
+    // @include flex(center);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: all 300ms ease;
+    div {
+        transform:rotate(90deg);
+        @include divWH(px2rem(100), px2rem(80));
+        // background-color: red;
+        @include flex(center);
+        align-items: center;
+        img  {
+            width: px2rem(40);
+        }
+        span {
+            @include fontSC(px2rem(30));
+        }
+    }
+}

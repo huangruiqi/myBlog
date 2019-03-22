@@ -1,0 +1,129 @@
+$colorAll: white;
+$fontFamily: Axure Handwriting;
+$fontWeight: 800;
+// 背景图片地址和大小
+@mixin back($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+}
+
+//定位全屏
+@mixin allcover {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+//定位上下左右居中
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin centerTB {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//定位左右居中
+@mixin centerLR {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+@mixin centerLRFixed {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+}
+//宽高
+@mixin divWH($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+//字体大小，颜色
+@mixin fontSC($size, $color: $colorAll, $fontFam: $fontFamily, $fontWei: $fontWeight) {
+  font-size: $size;
+  color: $color;
+  font-family: $fontFam;
+  font-weight: $fontWei;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin flex($type: space-between) {
+  display: flex;
+  justify-content: $type;
+}
+
+//动画
+@mixin animation($val) {
+  animation: $val;
+  -webkit-animation: $val;
+  -moz-animation: $val;
+  -ms-animation: $val;
+}
+
+@mixin keyframes($name, $obj) {
+  @keyframes #{$name} {
+
+    @each $i,
+    $val in $obj {
+      #{$i} {
+
+        @each $v1,
+        $val2 in $val {
+          #{$v1}: $val2;
+        }
+      }
+    }
+  }
+
+  @-moz-keyframes #{$name} {
+
+    @each $i,
+    $val in $obj {
+      #{$i} {
+
+        @each $v1,
+        $val2 in $val {
+          #{$v1}: $val2;
+        }
+      }
+    }
+  }
+
+  @-webkit-keyframes #{$name} {
+
+    @each $i,
+    $val in $obj {
+      #{$i} {
+
+        @each $v1,
+        $val2 in $val {
+          #{$v1}: $val2;
+        }
+      }
+    }
+  }
+
+  @-ms-keyframes #{$name} {
+
+    @each $i,
+    $val in $obj {
+      #{$i} {
+
+        @each $v1,
+        $val2 in $val {
+          #{$v1}: $val2;
+        }
+      }
+    }
+  }
+
+}

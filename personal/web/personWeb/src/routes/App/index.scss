@@ -1,0 +1,29 @@
+@import '../../styles/main.scss';
+@import '../../styles/mixin.scss';
+
+.appContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // min-height: px2rem(1080);
+    // overflow: scroll;
+    .appContent {
+        width: 100%;
+        margin-bottom: 0;
+        flex: 1;
+        // background-color: pink;
+        background-image: url('../../assets/back3.png');
+        background-size: cover;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        .hiddenDiv {
+            @include divWH(100%, px2rem(80));
+            @include flex();
+        }
+    }
+    .appFoot {
+        @include divWH(100%, px2rem(160));
+    }
+}
+

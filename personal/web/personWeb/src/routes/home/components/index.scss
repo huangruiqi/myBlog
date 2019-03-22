@@ -1,0 +1,95 @@
+@import '../../../styles/main.scss';
+@import '../../../styles/mixin.scss';
+
+.contentContainer {
+    @include divWH(95%, 100%);
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+
+    $an1:(opacity: 0);
+    $an2:(opacity: 1);
+    $demo:(0%:$an1, 50%:$an2, 100%:$an2);
+    @include keyframes(demo, $demo);
+    @include animation(demo 10s);
+    .smallContainer {
+        @include divWH(100%,100%);
+        @include flex();
+        flex-direction: column;
+        .contentTitle {
+            @include divWH(100%, 15%);
+            background-color: #fff;
+            p:nth-child(odd) {
+                font-size: px2rem(25);
+            }
+            p:nth-child(even) {
+                font-size: px2rem(40);
+                font-weight: 700;
+            }
+        }
+
+        .contentImg {
+            @include divWH(100%, 55%);
+            // background-color: red;
+            @include flex();
+            align-items: center;
+            img {
+                // @include divWH(px2rem());
+                width: px2rem(500);
+                height: px2rem(300);
+            }
+        }
+
+        .contentWords {
+            @include divWH(100%, 30%);
+            // background-color: blue;
+            table {
+                @include divWH(100%, 100%);
+                // background-color: blue;
+                td {
+                    font-style: italic;
+                }
+                tr:nth-child(odd) {
+                    @include fontSC(px2rem(18), black, 700);
+                }
+                tr:nth-child(even) {
+                    @include fontSC(px2rem(22), #525455);
+                
+                }
+            }
+        }
+    }
+
+}
+// 
+:global {
+//   .contentContainer {
+    .ant-carousel {
+        @include divWH(93%, 80%);
+        div {
+            width: 100%;
+            height: 100%;
+            .slick-dots {
+                bottom: 0;
+                button {
+                    background: black;
+                }
+                .slick-active {
+                    button {
+                        background: black;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    .ant-carousel .slick-slide {
+        height: px2rem(100%);
+        overflow: hidden;
+    }
+    .ant-carousel .slick-slide h3 {
+      color: black;
+    }
+//   }
+}

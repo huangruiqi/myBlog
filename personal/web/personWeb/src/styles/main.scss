@@ -1,0 +1,5 @@
+//计算rem
+@function px2rem($px) {
+  $rem: 16;
+  @return ($px / $rem) + rem;
+}

@@ -1,0 +1,20 @@
+@import '../../../../styles/main.scss';
+@import '../../../../styles/mixin.scss';
+
+.skillContainer {
+    width: 100%;
+    min-height: px2rem(400);
+    
+    .skillTitle {
+        @include divWH(px2rem(800), px2rem(100));
+        @include flex(center);
+        margin: 0 auto;
+        @include fontSC(px2rem(70), #46875D);
+        opacity: 0.6;
+    }
+    .chart {
+        @include divWH(250px, 250px);
+        float: left;
+        margin-left: px2rem(40);
+    }
+}

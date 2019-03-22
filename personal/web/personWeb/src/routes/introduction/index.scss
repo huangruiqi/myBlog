@@ -1,0 +1,15 @@
+@import '../../styles/main.scss';
+@import '../../styles/mixin.scss';
+
+.intrContainer {
+  flex: 1;
+  @include flex(center);
+  align-items: center;
+  .intrContent {
+    width: 70%;
+    min-height: px2rem(750);
+    background-color: #fff;
+    @include flex();
+    flex-direction: column;
+  }
+}

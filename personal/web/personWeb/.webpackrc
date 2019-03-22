@@ -1,0 +1,21 @@
+{
+  "entry": "src/index.js",   // 入口文件
+  "extraBabelPlugins": [
+    ["import", {
+      "libraryName": "antd",
+      "libraryDirectory": "es",
+      "style": true
+    }]
+  ],
+  "theme": {
+    "font-size-base": "12px",                           
+    "heading-color": "rgba(0, 0, 0, 1)",              
+    "text-color": "rgba(0, 0, 0, 1)",                 
+    "text-color-secondary" : "rgba(0, 0, 0, 1)",     
+    "disabled-color" : "rgba(0, 0, 0, 1)",                        
+    "border-color-base": "#d9d9d9",                    
+    "box-shadow-base": "0 2px 8px rgba(0, 0, 0, 1)",
+    "line-height-base": "1.4",
+    "margin": "0"
+  }
+}

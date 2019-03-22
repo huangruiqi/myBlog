@@ -1,0 +1,26 @@
+@import '../../styles/main.scss';
+@import '../../styles/mixin.scss';
+
+.mgtContainer {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    :global {
+        .ant-layout.ant-layout-has-sider {
+            flex: 1;
+            .logo {
+                height: px2rem(64);
+                background: rgba(255, 255, 255, .2);
+                margin: px2rem(32);
+                @include fontSC(px2rem(25), #1890FF, '微软雅黑');
+                cursor: pointer;
+                @include flex(center);
+                align-items: center;
+            }
+            .ant-menu-submenu-arrow {
+                height: 10px;
+            }
+        }
+        
+    }
+}

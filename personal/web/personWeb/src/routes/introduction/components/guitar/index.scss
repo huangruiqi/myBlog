@@ -1,0 +1,68 @@
+@import '../../../../styles/main.scss';
+@import '../../../../styles/mixin.scss';
+
+.guitarContainer {
+    width: 100%;
+    min-height: px2rem(700);
+    .guitarTitle {
+        @include divWH(px2rem(800), px2rem(100));
+        @include flex(center);
+        margin: 0 auto;
+        @include fontSC(px2rem(70), #46875D);
+        opacity: 0.6;
+    }
+    .Carousel {
+        height: px2rem(600);
+        width: 100%;
+        background: rgba(135, 174, 143, 0.8);
+        .videoDiv {
+          @include divWH(px2rem(800), px2rem(600));
+          @include flex(space-around);
+          align-items: center;
+          cursor: pointer;
+
+          video {
+            cursor: pointer;
+          }
+
+          video:hover {
+            -webkit-box-shadow: 3px 3px 3px;
+            -moz-box-shadow: 3px 3px 3px;
+            box-shadow: 3px 3px 3px;
+          }
+        }
+    }
+    
+}
+:global{
+    .index__Carousel___2Skvb {
+    .ant-carousel {
+        height: px2rem(600);
+        div {
+            height: 100%;
+            .slick-dots {
+              bottom: 14px;
+              button {
+                background: white;
+              }
+
+              .slick-active {
+                button {
+                  background: white;
+                }
+              }
+
+            }
+        }
+    }
+    .ant-carousel .slick-slide {
+        height: px2rem(600);
+        overflow: hidden;
+        position: relative;
+    }
+
+    .ant-carousel .slick-slide h3 {
+        color: #fff;
+    }
+    }
+}

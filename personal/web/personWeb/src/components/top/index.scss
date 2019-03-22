@@ -1,0 +1,132 @@
+@import '../../styles/main.scss';
+@import '../../styles/mixin.scss';
+
+.topContainer {
+    @include divWH(100%, px2rem(80));
+    @include flex();
+    position: fixed;
+    // background-color: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0));
+    z-index: 10000;
+    .logo {
+        @include divWH(px2rem(250), 100%);
+        @include flex(center);
+        align-items: center;
+        cursor: pointer;
+        span:first-of-type {
+            display: block;
+            @include fontSC(px2rem(20));
+        }
+        span:last-of-type {
+            display: none;
+            @include fontSC(px2rem(40));
+        }
+    }
+    .logo:hover {
+        span:first-of-type {
+            display: none;
+            @include fontSC(px2rem(20));
+        }
+
+        span:last-of-type {
+            display: block;
+            @include fontSC(px2rem(40));
+        }
+    }
+    .nav {
+        @include divWH(px2rem(1300), 100%);
+        display: flex;
+        flex-wrap: nowrap;
+        // overflow: hidden;
+        .webTitle {
+            @include divWH(70%, 100%);
+            @include flex();
+            flex-wrap: nowrap;
+            li {
+                height: 100%;
+                min-width: px2rem(10);
+                @include flex(center);
+                align-items: center;
+                position: relative;
+                a {
+                    @include fontSC(px2rem(20));    
+                    width: 100%;
+
+                    @include flex(flex-start);
+                    align-items: center;
+                }    
+                .navLink:hover:before {
+                  width: 100%;
+                  transition: all 300ms ease;
+                }
+                .navLink:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    width: 0%;
+                    height: px2rem(10);
+                    background-color: white;
+                    transition: all 300ms ease;
+                }
+                .active:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: px2rem(10);
+                    background-color: white;
+                    transition: all 300ms ease;
+                }
+            }
+        }
+        .linkTitle {
+            display: flex;
+            flex-wrap: nowrap;
+            @include divWH(30%, 100%);
+            li {
+                @include divWH(50%, 100%);
+                @include flex(center);
+                align-items: center;
+                position: relative;
+                z-index: 0;
+                cursor: pointer;
+                a {
+                    @include fontSC(px2rem(25), white);
+                    width: 100%;
+                    @include flex(center);
+                    align-items: center;
+                    z-index: 1000;
+                    img {
+                        width: px2rem(35);
+                    }
+                }
+            }
+            li:first-of-type {
+                background-color: #232728;
+            }
+            li:last-of-type {
+                background-color: #000000;
+            }
+            li::before {
+                content: '';
+                width: 0;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #fff;
+                z-index: 0;
+                // 让动画过渡原样返回
+                transition: all 300ms ease;
+            }
+            
+            li:hover:before {
+                width: 100%;
+                transition: all 300ms ease;
+            }
+            li:hover > a {
+                color: black;
+            }
+        }
+    }
+}

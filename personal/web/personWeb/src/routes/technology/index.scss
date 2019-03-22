@@ -1,0 +1,113 @@
+@import '../../styles/main.scss';
+@import '../../styles/mixin.scss';
+
+.tecContainer {
+    flex: 1;
+    @include flex(center);
+    align-items: center;
+    .tecContent {
+        width: 70%;
+        min-height: px2rem(750);
+        background-color: #fff;
+        @include flex();
+        flex-direction: column;
+        padding: px2rem(80) px2rem(100) px2rem(80) px2rem(100);
+        > span {
+            @include fontSC(px2rem(40), black);
+        }
+        hr {
+            width: 100%;
+            height: px2rem(1);
+
+        }
+        .blogList {
+            flex: 1;
+            width: 100%;
+            @include flex(center);
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            position: relative;
+            table {
+                width: 100%;
+                min-height: px2rem(300);
+                table-layout:fixed;
+                tr {
+                    height: px2rem(180);
+                    width: 100%;
+                    td {
+                        width: 50%;
+                        > div {
+                            cursor: pointer;
+                            @include divWH(80%, px2rem(300));
+                            // border: 1px solid black;
+                            -webkit-box-shadow: 3px 3px 3px;
+                            -moz-box-shadow: 3px 3px 3px;
+                            box-shadow: 3px 3px 3px;
+                            > div {
+                                @include divWH(100%, 100%);
+                                @include flex(space-around);
+                                align-items: center;
+                                flex-direction: column;
+                                background-color: #C7E8D5;
+                                img {
+                                    // @include divWH(80%, 80%);
+                                    width: 80%;
+                                }
+                            }
+
+                        }
+                        > div:active {
+                            -webkit-box-shadow: 6px 6px 6px #490711;
+                            -moz-box-shadow: 6px 6px 6px #490711;
+                            box-shadow: 6px 6px 6px #490711;
+                        }
+                    }
+                }
+                tr:nth-child(even) {
+                    td {
+                        border-left: 1px solid black;
+                    }
+                }
+                tr:nth-child(odd) {
+                  td {
+                    border-right: 1px solid black;
+                  }
+                }
+                #firstTd {
+                  border-right: 1px solid black;
+                  border-left: 0;
+                }
+
+                #secondTd {
+                  border-left: 1px solid black;
+                  border-right: 0;
+                }
+                // td:nth-child(1) {
+                //   border-left: 1px solid black;
+                // }
+            }
+            > img {
+                @include centerLRFixed();
+                // @include centerLR();
+                top: 21%;
+                width: px2rem(100);
+                transition-duration: 2s;
+                transition-property: top;
+            }
+        }
+    }
+}
+@media screen and (min-width: 0) and (max-width: 500px) {
+  .tecContent {
+    width: 70%;
+    // min-height: px2rem(800);
+    .blogList {
+        overflow-y: auto;
+        min-height: px2rem(1000);
+        div {
+            // height: px2rem(1000);
+            // overflow-y: hidden;
+        }
+    }
+  }
+}

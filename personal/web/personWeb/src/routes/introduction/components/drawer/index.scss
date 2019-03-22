@@ -1,0 +1,42 @@
+@import '../../../../styles/main.scss';
+@import '../../../../styles/mixin.scss';
+
+.drawerContainer {
+    width: 100%;
+    min-height: px2rem(800);
+    // @include flex(space-around);
+    // flex-direction: column;
+    // align-items: center;
+    position: relative;
+    overflow: visible;
+    .drawerTitle {
+        @include divWH(px2rem(800), px2rem(100));
+        @include flex(center);
+        margin: 0 auto;
+        @include fontSC(px2rem(70), #46875D);
+        opacity: 0.6;
+    }
+    .charts {
+        @include divWH(px2rem(150), px2rem(200));
+        position: absolute;
+        left: 50%;
+        top: px2rem(300);
+        transform: translateX(-50%) rotateX(-10deg);
+        position: relative;
+        transform-style:preserve-3d;
+        perspective-origin: 0 0;
+        overflow: visible;
+        img {
+            @include divWH(100%, 100%);
+            position: absolute;
+            box-shadow: 0 0 8px #eaeaea;
+            box-shadow: 1px -1px 6px #666;
+            border-radius: 4px;
+            -webkit-box-reflect: below 3px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.4));
+            cursor: pointer;
+        }
+        img:hover {
+            @include divWH(120%, 120%);
+        }
+    }
+}

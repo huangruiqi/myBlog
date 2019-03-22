@@ -1,0 +1,27 @@
+@import '../../../../styles/main.scss';
+@import '../../../../styles/mixin.scss';
+
+.pickContainer {
+    @include divWH(100%, px2rem(300));
+    @include back("../../../../assets/intrBack.png");
+    background-color: #87AE8F;
+    background-size: 50%;
+    background-position: 50% px2rem(-100);
+    @include flex(space-around);
+    align-items: flex-end;
+    P {
+        @include fontSC(px2rem(140), "Gill Sans Ultra Bold");
+        opacity: 0.4;
+        margin: 0 auto;
+    }
+    ul {
+        @include divWH(18%, 30%);
+        @include flex(flex-end);
+        flex-direction: column;
+        overflow-y: hidden;
+        li {
+            @include fontSC(px2rem(20), "Gill Sans Ultra Bold");
+            opacity: 0.4;
+        }
+    }
+}
