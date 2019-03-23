@@ -19,7 +19,8 @@
     "path-to-regexp": "^2.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "set-blocking": "^2.0.0"
   },
   "devDependencies": {
     "antd": "^3.11.0",
@@ -35,5 +36,11 @@
     "husky": "^0.12.0",
     "redbox-react": "^1.4.3",
     "roadhog": "^2.0.0"
-  }
+  },
+  "name": "personweb",
+  "version": "1.0.0",
+  "main": ".roadhogrc.mock.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
